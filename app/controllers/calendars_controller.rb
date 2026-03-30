@@ -34,7 +34,6 @@ class CalendarsController < ApplicationController
       plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
       end
-      
       # 曜日を配列から取り出す正しい書き方に修正！
       wday_num = (@todays_date + x).wday
       days = { month: (@todays_date + x).month, date: (@todays_date + x).day, plans: today_plans, wday: wdays[wday_num]}
